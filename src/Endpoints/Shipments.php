@@ -6,16 +6,16 @@ namespace MichaelB\ShipStation\Endpoints;
 
 class Shipments extends BaseEndpoint
 {
-    protected $endpoint = '/shipments';
+    protected $endpoint = '/shipments/';
 
     /**
-     * Get a list o
+     * Get a list of shipments or query shipments.
      * @param array $query
      * @return \GuzzleHttp\Psr7\Response
      */
     public function listShipments($query = [])
     {
-        return $this->get('', ['form_params' => $query]);
+        return $this->get('', ['query' => $query]);
     }
 
     /**
